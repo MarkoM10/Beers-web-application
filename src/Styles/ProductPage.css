@@ -1,0 +1,87 @@
+.product-page-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-page-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60vw;
+    justify-items: center;
+}
+.product-page-img{
+    /* justify-self: start; */
+    align-self: center;
+}
+.product-page-img img:first-child{
+    width: 120px;
+}
+.product-page-details{
+    justify-self: start;
+    margin-top: 2rem;
+    padding: 3rem 0;
+}
+.details-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.price-label{
+    justify-self: flex-end;
+    font-size: 5rem;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 2rem;
+    font-weight: 900;
+}
+.product-page-details h1:first-child{
+    font-size: 4rem;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.product-page-details p:nth-child(2){
+    color: white;
+    font-size: 2rem;
+    margin-top: 2rem;
+    line-break: strict;
+
+}
+.product-page-details p:nth-child(3){
+    color: white;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+.product-page-details p:nth-child(4){
+    color: white;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+.food-pairing-list{
+    color: white;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+.hr{
+    margin-top: 2rem;
+    border: 0.01rem solid white;
+}
+.product-page-details button:nth-child(7){
+    padding: 1rem 5rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #e6a10e;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.08rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    width: 40%;
+}
+.product-page-details button:nth-child(7):hover{
+    background-color:black;
+    color: #e6a10e;
+    transition: 0.5s;
+}
