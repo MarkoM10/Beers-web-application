@@ -14,7 +14,7 @@ const Beer = ({beers,navigate,setCount,count,setCartData,cartData,setClickAddToC
     return beer.charAt(beer.length - 1);
   }
 
-  const addBeerToCart= (beer,beerId)=>{
+  const addBeerToCart= (beer)=>{
       const isBeerInCart = cartData.find(el=>el.id===beer.id);
       let newBeers;
       if (isBeerInCart){
@@ -47,7 +47,7 @@ const Beer = ({beers,navigate,setCount,count,setCartData,cartData,setClickAddToC
           <p><span className='beer-card-abv'>$</span><label className='beer-card-abv'>{beer.abv}</label></p>
         </div>
         <div className='button-box'>
-        <button className='add-to-cart-btn' onClick={() => {addBeerToCart(beer,beer.id)}}>Add to cart</button>
+        <button className='add-to-cart-btn' onClick={() => {addBeerToCart(beer)}}>Add to cart</button>
         </div>
       </div>
       )

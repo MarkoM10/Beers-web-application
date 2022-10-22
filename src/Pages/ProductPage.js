@@ -59,16 +59,20 @@ const BeerDetails = ({cartData,setCartData,setCount,count}) => {
                   <img alt='beer' src={beer.image_url}/>
                 </div>
                 <div className='product-page-details'>
-                    <div className='details-header'>
-                        <h1>{beer.name}</h1>
-                        <label className='price-label'><span>$</span>{beer.abv}</label>
-                    </div>
-                    <hr className='hr'></hr>
-                    <p>{beer.description}</p>
-                    <p>Food Pairing: </p>
-                    <p>{beer.food_pairing?.map(el=><li className='food-pairing-list' key={el.id}>{el}</li>)}</p>
-                    <hr className='hr'></hr>
-                    <button onClick={()=>addBeerToCart()}>{addToCartBtn}</button>
+                  <div className='details'>
+                      <div className='details-header'>
+                          <h1>{beer.name}</h1>
+                          <label className='price-label'><span>$</span>{beer.abv}</label>
+                      </div>
+                      <hr className='hr'></hr>
+                      <p>{beer.description}</p>
+                      <p>Food Pairing: </p>
+                      <p>{beer.food_pairing?.map(el=><li className='food-pairing-list' key={el.id}>{el}</li>)}</p>
+                      <hr className='hr'></hr>
+                      <div className='product-page-btn-box'>
+                        <button onClick={()=>addBeerToCart()}>{addToCartBtn}</button>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>

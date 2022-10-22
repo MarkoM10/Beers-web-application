@@ -39,6 +39,7 @@ const Home = ({searchTerm,orderType,count,setCount,setCartData,cartData,setClick
 
   },[searchTerm,orderType])
 
+  
 
   //Get current posts
   const indexOfLastBeer = currentPage*beersPerPage;
