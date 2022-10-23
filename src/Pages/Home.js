@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect, useContext} from 'react'
 import { useNavigate } from "react-router-dom";
 import Beer from '../Components/Beer';
 import {getAllBeers} from "../Services/AxiosService";
@@ -6,10 +6,16 @@ import "../Styles/Home.css"
 import Context from '../Components/Context';
 import Footer from '../Components/Footer';
 
-const Home = ({searchTerm,orderType,count,setCount,setCartData,cartData,setClickAddToCart,setClickAddToCart2}) => {
-
-
+const Home = () => {
+  
   const navigate = useNavigate();
+  const context = useContext(Context);
+  const searchTerm = context.searchTerm;
+  const orderType = context.orderType;
+  const count = context.count;
+  const setCount = context.setCount;
+  const cartData = context.cartData;
+  const setCartData = context.setCartData;
 
   const[beers,setBeers] = useState([]);
   const[currentPage,setCurrentPage] = useState(1);
@@ -56,7 +62,7 @@ const Home = ({searchTerm,orderType,count,setCount,setCartData,cartData,setClick
   return (
     <div className='main'>
       <section className='content'>
-        {<Beer setClickAddToCart2={setClickAddToCart2} setClickAddToCart={setClickAddToCart} cartData={cartData} setCartData={setCartData} count={count} setCount={setCount} beers={currentPost} navigate={navigate}/>}
+        {<Beer cartData={cartData} setCartData={setCartData} count={count} setCount={setCount} beers={currentPost} navigate={navigate}/>}
       </section>
       <Context.Provider value={{beers,beersPerPage,totalBeers,paginate}}>
           <Footer/>

@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {useParams} from "react-router-dom";
 import { useEffect,useState } from 'react';
 import {getBeerById} from "../Services/AxiosService";
 import "../Styles/ProductPage.css"
+import Context from '../Components/Context';
 
-const BeerDetails = ({cartData,setCartData,setCount,count}) => {
+const BeerDetails = () => {
+
+  const context = useContext(Context);
+  const count = context.count;
+  const setCount = context.setCount;
+  const cartData = context.cartData;
+  const setCartData = context.setCartData;
 
   const {id} = useParams();
 
@@ -25,7 +32,6 @@ const BeerDetails = ({cartData,setCartData,setCount,count}) => {
     })
   },[id]);
 
-  // console.log(cartData, " beer iz product page ");
 
   const addBeerToCart= ()=>{
     let newBeers;
@@ -49,8 +55,6 @@ const BeerDetails = ({cartData,setCartData,setCount,count}) => {
         setAddToCartBtn(addToCartBtn);
       }, 2000);
   }
-
-  // console.log(beer)
 
   return (
         <div className='product-page-wrapper'>

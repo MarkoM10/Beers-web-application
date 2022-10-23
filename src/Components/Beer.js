@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Beer = ({beers,navigate,setCount,count,setCartData,cartData,setClickAddToCart,setClickAddToCart2}) => {
+const Beer = ({beers,navigate,setCount,count,setCartData,cartData}) => {
 
   const openBeerPage = (beerId) =>{
     navigate(`/${beerId}`);
@@ -30,8 +30,6 @@ const Beer = ({beers,navigate,setCount,count,setCartData,cartData,setClickAddToC
       }
     setCartData(newBeers);
     setCount(count+1);
-    setClickAddToCart("shopping-cart-container");
-    setClickAddToCart2("cart-heading-none");
     }
     
     
@@ -39,7 +37,7 @@ const Beer = ({beers,navigate,setCount,count,setCartData,cartData,setClickAddToC
     beers.map(beer => 
       <div className='beer-card' key={beer.id}>
         <div className='beer-img-box'>
-        <img src={beer.image_url} alt="beers" className='beer-img' onClick={()=>openBeerPage(beer.id)}/>
+          <img src={beer.image_url} alt="beers" className='beer-img' onClick={()=>openBeerPage(beer.id)}/>
         </div>
         <div className='beer-details'>
           <h1 className='beer-name'>{name(beer.name)}<span className='last-letter'>{lastLetter(beer.name)}</span></h1>
@@ -47,7 +45,7 @@ const Beer = ({beers,navigate,setCount,count,setCartData,cartData,setClickAddToC
           <p><span className='beer-card-abv'>$</span><label className='beer-card-abv'>{beer.abv}</label></p>
         </div>
         <div className='button-box'>
-        <button className='add-to-cart-btn' onClick={() => {addBeerToCart(beer)}}>Add to cart</button>
+          <button className='add-to-cart-btn' onClick={() => {addBeerToCart(beer)}}>Add to cart</button>
         </div>
       </div>
       )
